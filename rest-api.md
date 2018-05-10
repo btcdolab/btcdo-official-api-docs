@@ -8,23 +8,23 @@
 
 ## **接口列表**
 
-| **接口分类** | **请求类型** | **请求地址**                       | **接口描述**                             |
-| :----------- | ------------ | ---------------------------------- | ---------------------------------------- |
-| 公共类       | GET          | /v1/common/currencies              | 获取所有币种信息                         |
-| 公共类       | GET          | /v1/common/currencies/{currency}   | 获取指定币种信息                         |
-| 公共类       | GET          | /v1/common/errorCodes              | 获取错误信息                             |
-| 公共类       | GET          | /v1/common/symbols                 | 获取所有交易对                           |
-| 公共类       | GET          | /v1/common/symbols/{symbol}        | 获取指定交易对                           |
-| 公共类       | GET          | /v1/common/timestamp               | 获取系统时间                             |
-| 市场类       | GET          | /v1/market/bars/{symbol}/{type}    | 获取指定交易对行情数据                   |
-| 市场类       | GET          | /v1/market/depth/{symbol}          | 获取指定交易对深度                       |
-| 市场类       | GET          | /v1/market/prices                  | 获取所有交易对成交信息                   |
-| 交易类       | GET          | /v1/trade/orders                   | 获取最近交易记录（默认100条记录）        |
-| 交易类       | POST         | /v1/trade/orders                   | 创建订单（限价买/卖单，撤销限价买/卖单） |
-| 交易类       | GET          | /v1/trade/orders/{orderId}         | 获取订单详情信息                         |
-| 交易类       | GET          | /v1/trade/orders/{orderId}/matches | 获取订单撮合信息                         |
-| 用户类       | GET          | /v1/user/accounts                  | 获取用户对应账户信息                     |
-| 用户类       | GET          | /v1/user/deposits/{currency}       | 获取充值记录                             |
+| **接口分类** | **请求类型** | **请求地址**                       | **接口描述**           |
+| :----------- | ------------ | ---------------------------------- | ---------------------- |
+| 公共类       | GET          | /v1/common/currencies              | 获取所有币种信息       |
+| 公共类       | GET          | /v1/common/currencies/{currency}   | 获取指定币种信息       |
+| 公共类       | GET          | /v1/common/errorCodes              | 获取错误信息           |
+| 公共类       | GET          | /v1/common/symbols                 | 获取所有交易对         |
+| 公共类       | GET          | /v1/common/symbols/{symbol}        | 获取指定交易对         |
+| 公共类       | GET          | /v1/common/timestamp               | 获取系统时间           |
+| 市场类       | GET          | /v1/market/bars/{symbol}/{type}    | 获取指定交易对行情数据 |
+| 市场类       | GET          | /v1/market/depth/{symbol}          | 获取指定交易对深度     |
+| 市场类       | GET          | /v1/market/prices                  | 获取所有交易对成交信息 |
+| 交易类       | GET          | /v1/trade/orders                   | 获取最近交易记录       |
+| 交易类       | POST         | /v1/trade/orders                   | 创建订单               |
+| 交易类       | GET          | /v1/trade/orders/{orderId}         | 获取订单详情信息       |
+| 交易类       | GET          | /v1/trade/orders/{orderId}/matches | 获取订单撮合信息       |
+| 用户类       | GET          | /v1/user/accounts                  | 获取用户对应账户信息   |
+| 用户类       | GET          | /v1/user/deposits/{currency}       | 获取充值记录           |
 
 ## **API签名**
 
@@ -633,7 +633,7 @@ GET 	/v1/trade/orders
 }
 ```
 
-### **创建订单（限价买****/****卖单，撤销限价买****/****卖单）**
+### 创建订单
 
 ```
 POST 	/v1/trade/orders 
