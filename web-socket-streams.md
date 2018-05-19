@@ -2,17 +2,17 @@
 
 ## 域名
 
-###### **wss://onli-quotation.btcdo.com** 
+###### **wss://onli-quotation.btcdo.com**
 
 ## 路径
 
-###### **/v1/market** 
+###### **/v1/market**
 
 ## 请求类型
 
-###### **websocket** 
+###### **websocket**
 
-### **开启订阅** **socket** **推送** 
+### **开启订阅** **socket** **推送**
 
 #### 订阅Key：
 
@@ -85,11 +85,11 @@ topic_tick
 | -------------- | -------- | -------- | ------------------------- |
 | 当前交易对Tick | Ticker[] | YES      |                           |
 | — Ticker       |          | YES      |                           |
-| — —  id        | String   | YES      |                           |
-| — —  amount    | String   | YES      | 数量                      |
-| — —  createdAt | String   | YES      | 创建时间（UTC）           |
-| — —  direction | String   | YES      | 涨跌描述，true涨，false跌 |
-| — —  price     | String   | YES      | 当前价格                  |
+| — —  id        | Long     | YES      |                           |
+| — —  amount    | Float    | YES      | 数量                      |
+| — —  createdAt | Long     | YES      | 创建时间（UTC）           |
+| — —  direction | boolean  | YES      | 涨跌描述，true涨，false跌 |
+| — —  price     | Float    | YES      | 当前价格                  |
 | — —  symbol    | String   | YES      | 当前币对                  |
 
 ```
@@ -104,7 +104,7 @@ topic_tick
 ]
 ```
 
-### **当前交易对深度图** 
+### **当前交易对深度图**
 
 #### 订阅Key：
 
@@ -122,15 +122,15 @@ topic_snapshot
 
 | **名称**   | **类型** | **必返** | **描述**      |
 | ---------- | -------- | -------- | ------------- |
-| price      | String   | YES      | 当前实价      |
+| price      | Float    | YES      | 当前实价      |
 | symbol     | String   | YES      | 当前币对      |
-| timestamp  | String   | YES      | 时间戳（UTC） |
+| timestamp  | Long     | YES      | 时间戳（UTC） |
 | buyOrders  | Depth[]  | YES      | 买入列表      |
-| —  price   | float    | YES      | 价格          |
-| — amount   | float    | YES      | 数量          |
+| —  price   | Float    | YES      | 价格          |
+| — amount   | Float    | YES      | 数量          |
 | sellOrders | Depth[]  | YES      | 卖出列表      |
-| —  price   | float    | YES      | 价格          |
-| — amount   | float    | YES      | 数量          |
+| —  price   | Float    | YES      | 价格          |
+| — amount   | Float    | YES      | 数量          |
 
 ```
 {
