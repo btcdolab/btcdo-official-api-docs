@@ -84,11 +84,11 @@ topic_tick
 | **名称**       | **类型** | **必输** | **描述**                  |
 | -------------- | -------- | -------- | ------------------------- |
 | 当前交易对Tick | Ticker[] | YES      |                           |
-| — Ticker       |          | YES      |                           |
+| — Ticker       |          | YES      | Taker信息                          |
 | — —  id        | Long     | YES      |                           |
 | — —  amount    | Float    | YES      | 数量                      |
 | — —  createdAt | Long     | YES      | 创建时间（UTC）           |
-| — —  direction | boolean  | YES      | 涨跌描述，true涨，false跌 |
+| — —  direction | boolean  | YES      | 买卖，true买，false卖 |
 | — —  price     | Float    | YES      | 当前价格                  |
 | — —  symbol    | String   | YES      | 当前币对                  |
 
