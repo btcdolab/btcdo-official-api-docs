@@ -28,7 +28,7 @@ subscribe
 
 #### 例：
 
-```javascript
+```java
 socket = new WebSocket(“wss://onli-quotation.btcdo.com");
 socket.io.on(‘open', function () {
     socket.emit('subscribe', { symbol: ‘BDB_BTC’ });
