@@ -28,7 +28,7 @@ subscribe
 
 #### 例：
 
-```
+```javascript
 socket = new WebSocket(“wss://onli-quotation.btcdo.com");
 socket.io.on(‘open', function () {
     socket.emit('subscribe', { symbol: ‘BDB_BTC’ });
@@ -57,7 +57,7 @@ socket.io.on(‘open', function () {
 | — — Price[4] | Float    | NO       | 收盘价         |
 | — — Price[5] | Float    | NO       | 成交量         |
 
-```
+```javascript
 {
 	BDB_BTC: [1523330996424, 0.00000677, 0.00000677, 0.00000675, 0.00000676, 679418],
 	BDB_ETH: [1523330996424, 0.00011645, 0.00011645, 0.00010294, 0.00011597, 2028162],
@@ -81,25 +81,25 @@ topic_tick
 
 #### 订阅返回：
 
-| **名称**       | **类型** | **必输** | **描述**                  |
-| -------------- | -------- | -------- | ------------------------- |
-| 当前交易对Tick | Ticker[] | YES      |                           |
-| — Ticker       |          | YES      | Taker信息                          |
-| — —  id        | Long     | YES      |                           |
-| — —  amount    | Float    | YES      | 数量                      |
-| — —  createdAt | Long     | YES      | 创建时间（UTC）           |
+| **名称**       | **类型** | **必输** | **描述**              |
+| -------------- | -------- | -------- | --------------------- |
+| 当前交易对Tick | Ticker[] | YES      |                       |
+| — Ticker       |          | YES      | Taker信息             |
+| — —  id        | Long     | YES      |                       |
+| — —  amount    | Float    | YES      | 数量                  |
+| — —  createdAt | Long     | YES      | 创建时间（UTC）       |
 | — —  direction | boolean  | YES      | 买卖，true买，false卖 |
-| — —  price     | Float    | YES      | 当前价格                  |
-| — —  symbol    | String   | YES      | 当前币对                  |
+| — —  price     | Float    | YES      | 当前价格              |
+| — —  symbol    | String   | YES      | 当前币对              |
 
-```
+```javascript
 [{
 		amount: 2403,
-		 createdAt: 1523405631866,
-		 direction: true,
-		 id: 114524,
-		 price: 0.00000676,
-		 symbol: "BDB_BTC" 
+		createdAt: 1523405631866,
+		direction: true,
+		id: 114524,
+		price: 0.00000676,
+		symbol: "BDB_BTC" 
 	}
 ]
 ```
@@ -132,7 +132,7 @@ topic_snapshot
 | —  price   | Float    | YES      | 价格          |
 | — amount   | Float    | YES      | 数量          |
 
-```
+```java
 {
 	price: 0.076851，
 	symbol: "ETH_BTC",
@@ -148,3 +148,41 @@ topic_snapshot
 }
 ```
 
+### K线推送
+
+#### 订阅Key：
+
+```
+topic_bar
+```
+
+#### 订阅参数：
+
+| **名称** | **类型** | **必输** | **描述**            |
+| -------- | -------- | -------- | ------------------- |
+| symbol   | String   | YES      | 交易对，例：BDB_BTC |
+
+#### 订阅返回：
+
+| **名称**     | **类型** | **必输** | **描述**                                                     |
+| ------------ | -------- | -------- | ------------------------------------------------------------ |
+| data         | Ticker[] | YES      |                                                              |
+| — Price      |          | YES      |                                                              |
+| — — Price[0] | Long     | NO       | K线时间（UTC）                                               |
+| — — Price[1] | Float    | NO       | 开盘价                                                       |
+| — — Price[2] | Float    | NO       | 最高价                                                       |
+| — — Price[3] | Float    | NO       | 最低价                                                       |
+| — — Price[4] | Float    | NO       | 收盘价                                                       |
+| — — Price[5] | Float    | NO       | 成交量                                                       |
+| symbol       | String   | YES      | 交易对，例：BDB_BTC                                          |
+| type         | String   | YES      | 秒K：K_1_SEC<br>分钟K：K_1_MIN<br>小时K： K_1_HOUR <br>日K： K_1_DAY |
+
+```javascript
+{
+	data: [1529497716000, 0.00018503, 0.00018503, 0.00018503, 0.00018503, 1000],
+	symbol: "BDB_ETH",
+	type: "K_1_SEC"
+}
+```
+
+### 
