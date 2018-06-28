@@ -643,7 +643,7 @@ POST 	/v1/trade/orders
 
 | **名称**       | **类型** | **必输** | **描述**                                                     |
 | -------------- | -------- | -------- | ------------------------------------------------------------ |
-| amount         | float    | NO       | 金额（限价买/卖单必输）                                      |
+| amount         | float    | NO       | 数量（限价买/卖单必输）                                      |
 | customFeatures | int      | NO       | 订单特性<br>65536：燃烧DBD(使用BDB抵扣手续费) |
 | orderType      | String   | YES      | 订单类型<br> BUY_LIMIT：限价买单；<br> SELL_LIMIT：限价卖单；<br> CANCEL_BUY_LIMIT：限价买单撤单；<br> CANCEL_SELL_LIMIT：限价卖单撤单 |
 | price          | float    | NO       | 价格（限价买/卖单必输）                                      |
