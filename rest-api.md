@@ -593,7 +593,7 @@ GET 	/v1/trade/orders
 | — —filledAmount | BigDecimal | NO       | 成交额                                                       |
 | — —fee          | BigDecimal | NO       | 手续费                                                       |
 | — —features     | int        | NO       | 订单特性                                                     |
-| — —status       | String     | NO       | 订单状态<br> 限价买单&限价卖单<br> SEQUENCED：已定序；<br> FULLY_FILLED：全部成交；<br> PARTIAL_FILLED：部分成交；<br> PARTIAL_CANCELLED：部分取消；<br> FULLY_CANCELLED：全部取消；<br> 限价买单撤单&限价卖单撤单 <br> CANCELLED_OK：撤单成功；<br> CANCELLED_FAILED：撤单失败 |
+| — —status       | String     | NO       | 订单状态<br> 限价买单&限价卖单<br> SEQUENCED：已定序；<br> FULLY_FILLED：全部成交；<br>  PARTIAL_CANCELLED：部分取消；<br> FULLY_CANCELLED：全部取消；<br> 限价买单撤单&限价卖单撤单 <br> CANCELLED_OK：撤单成功；<br> CANCELLED_FAILED：撤单失败 |
 
 ```
 {
