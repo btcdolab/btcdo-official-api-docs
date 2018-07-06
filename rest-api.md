@@ -36,7 +36,7 @@ btcdo的交易类、用户类API请求需要签名，以确认用户身份，并
 
 ###### 方法名称：`GET`或`POST`
 
-###### 请求域名：例如`www.btcdo.com`
+###### 请求域名：例如`api.btcdo.com`
 
 ###### 请求路径：以/开头的URI，例如：`/v1/trade/orders`
 
@@ -51,7 +51,7 @@ btcdo的交易类、用户类API请求需要签名，以确认用户身份，并
 ```
 GET\n
 
-www.btcdo.com\n
+api.btcdo.com\n
 
 /v1/trade/orders\n
 
