@@ -18,7 +18,7 @@
 | 公共类       | GET          | /v1/common/timestamp               | 获取系统时间           |
 | 市场类       | GET          | /v1/market/bars/{symbol}/{type}    | 获取指定交易对行情数据 |
 | 市场类       | GET          | /v1/market/depth/{symbol}          | 获取指定交易对深度     |
-| 市场类       | GET          | /v1/market/prices                  | 获取所有交易对成交信息 |
+| 市场类       | GET          | /v1/market/prices                  | 获取所有交易对最近24小时成交信息 |
 | 交易类       | GET          | /v1/trade/orders                   | 获取最近交易记录       |
 | 交易类       | POST         | /v1/trade/orders                   | 创建订单               |
 | 交易类       | GET          | /v1/trade/orders/{orderId}         | 获取订单详情信息       |
@@ -519,7 +519,7 @@ GET 	/v1/market/depth/{symbol}
 }
 ```
 
-### **获取所有交易对成交信息**
+### **获取所有交易对最近24小时成交信息**
 
 ```
 GET 	/v1/market/prices 
