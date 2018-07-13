@@ -6,7 +6,7 @@
 
 ## 路径
 
-###### **/v1/market?EIO=3&transport=websocket**
+###### **/v1/market/?EIO=3&transport=websocket**
 
 ## 请求类型
 
