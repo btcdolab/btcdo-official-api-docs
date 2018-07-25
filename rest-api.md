@@ -23,6 +23,7 @@
 | 交易类       | POST         | /v1/trade/orders                   | 创建订单               |
 | 交易类       | GET          | /v1/trade/orders/{orderId}         | 获取订单详情信息       |
 | 交易类       | GET          | /v1/trade/orders/{orderId}/matches | 获取订单撮合信息       |
+| 交易类       | GET          | /v1/trade/active/orders		| 获取已挂活跃订单信息    |
 | 用户类       | GET          | /v1/user/accounts                  | 获取用户对应账户信息   |
 | 用户类       | GET          | /v1/user/deposits/{currency}       | 获取充值记录           |
 
@@ -790,6 +791,78 @@ GET 	/v1/trade/orders/{orderId}/matches
 		"price": 0.03500002,
 		"amount": 1.0,
 		"fee": 7.000004e-05
+	}]
+}
+```
+
+### **获取已挂活跃订单信息（默认****100****条记录）**
+
+```
+GET 	/v1/trade/active/orders 
+```
+
+#### 请求参数：
+
+| **名称** | **类型** | **必输** | **描述** |
+| -------- | -------- | -------- | -------- |
+| symbol   | String   | NO    | 默认返回所有交易对记录   |
+
+#### 应答参数：
+
+| **名称**        | **类型**   | **必返** | **描述**                                                     |
+| --------------- | ---------- | -------- | ------------------------------------------------------------ |
+| orders          | Order[]    | NO       |                                                              |
+| — Order         |            | NO       |                                                              |
+| — — id          | String     | NO       | 订单号                                                       |
+| — — createdAt   | Long       | NO       | 订单创建时间（UTC）                                          |
+| — — updatedAt   | Long       | NO       | 订单更新时间（UTC）                                          |
+| — — seqId       | Long       | NO       | 订单序列号                                                   |
+| — — refOrderId  | Long       | NO       | 关联订单号                                                   |
+| — — refSeqId    | Long       | NO       | 关联序列号                                                   |
+| — —userId       | Long       | NO       | 用户编号                                                     |
+| — —symbol       | String     | NO       | 交易对                                                       |
+| — —type         | String     | NO       | 订单类型  <br>BUY_LIMIT ：限价买单；<br>SELL_LIMIT：限价卖单；<br>CANCEL_BUY_LIMIT：限价买单撤单；<br>CANCEL_SELL_LIMIT：限价卖单撤单 |
+| — —price        | BigDecimal | NO       | 价格                                                         |
+| — —amount       | BigDecimal | NO       | 数量                                                         |
+| — —filledAmount | BigDecimal | NO       | 成交额                                                       |
+| — —fee          | BigDecimal | NO       | 手续费                                                       |
+| — —features     | int        | NO       | 订单特性                                                     |
+| — —status       | String     | NO       | 订单状态<br> 限价买单&限价卖单<br> SEQUENCED：已定序          |
+
+```
+{
+	"orders": [{
+		"id": 104098,
+		"createdAt": 1523182488682,
+		"updatedAt": 1523182488739,
+		"seqId": 7947,
+		"refOrderId": 0,
+		"refSeqId": 0,
+		"userId": 100017,
+		"symbol": "IOST_BDB",
+		"type": "SELL_LIMIT",
+		"price": 6.0,
+		"amount": 17.0,
+		"filledAmount": 17.0,
+		"fee": 0.204,
+		"features": 65536,
+		"status": "SEQUENCED"
+	}, {
+		"id": 104097,
+		"createdAt": 1523182483611,
+		"updatedAt": 1523182488739,
+		"seqId": 7946,
+		"refOrderId": 0,
+		"refSeqId": 0,
+		"userId": 100017,
+		"symbol": "IOST_BDB",
+		"type": "BUY_LIMIT",
+		"price": 6.0,
+		"amount": 17.0,
+		"filledAmount": 17.0,
+		"fee": 0.034,
+		"features": 65536,
+		"status": "SEQUENCED"
 	}]
 }
 ```
